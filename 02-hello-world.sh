@@ -2,7 +2,7 @@
 PERSON1=john
 PERSON2=ram
 
-echo "ramesh:: hi,this is ramesh"
-echo "suresh:: this is suresh"
-echo "ramesh:: how are u suresh"
-echo "suresh:: iam fine ramesh"
+echo "$PERSON1:: hi,this is $PERSON1"
+echo "$PERSON2:: this is $PERSON2"
+echo "$PERSON1:: how are u $PERSON2"
+echo "$PERSON2:: iam fine $PERSON1"
