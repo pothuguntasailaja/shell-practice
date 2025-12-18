@@ -55,3 +55,15 @@ if [ $? -ne 0 ]; then
 else
     echo -e "Python3 already exist... $Y SKIPPING $N"  | tee -a $LOG_FILE   
 fi
+
+# Start script
+ #  |
+#Check root user
+ #  |
+#Check MySQL → Install or Skip
+ #  |
+#Check Nginx → Install or Skip
+ #  |
+#Check Python3 → Install or Skip
+ #  |
+#End
