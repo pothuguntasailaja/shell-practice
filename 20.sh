@@ -11,36 +11,42 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi    
 
+LOGS_FOLDER="/var/log/shell-script"
+SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
+LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log
+ 
+mkdir -p $LOGS_FOLDER
+echo "script started executed at: $(date)" | tee -a $LOG_FILE
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then 
-    echo -e "not  installed $2 .... $R FAILURE $N"
+    echo -e "not  installed $2 .... $R FAILURE $N" | tee -a $LOG_FILE
     exit 1
 else 
-    echo -e "already installed $2 .... $G SUCESS $N"    
+    echo -e "already installed $2 .... $G SUCESS $N" | tee -a $LOG_FILE   
 fi
 }
-dnf list installed mysql
+dnf list installed mysql &>>$LOG_FILE
 
 if [ $? -ne 0 ]; then 
     dnf install mysql -y
     VALIDATE $? "MYSQL"
 else 
-    echo -e "already installed.... $Y SKIPPING $N"
+    echo -e "already installed.... $Y SKIPPING $N" | tee -a $LOG_FILE
 fi 
 
-dnf list installed nginx
+dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]; then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else 
-    echo -e "already installed.... $Y SKIPPING $N"
+    echo -e "already installed.... $Y SKIPPING $N" | tee -a $LOG_FILE
 fi 
 
-dnf list installed python3 
+dnf list installed python3 &>>$LOG_FILE
 if [ $? -ne 0 ]; then
     dnf install python3 -y
     VALIDATE $? "python3"
 else
-    echo -e "already installed.... $Y SKIPPING $N"    
+    echo -e "already installed.... $Y SKIPPING $N"  | tee -a $LOG_FILE  
 fi    
