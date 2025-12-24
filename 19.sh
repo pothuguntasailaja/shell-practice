@@ -17,3 +17,12 @@ echo "$person3:: hi, $person4"
 echo "$person4:: hello, $person3"
 echo "$person3:: which course u are learning $person4"
 echo "$person4:: iam learning shell $person3"
+
+
+person3=$2
+person4=$3
+
+echo "$person3:: hi, $person4"
+echo "$person4:: hello, $person3"
+echo "$person3:: which course u are learning $person4"
+echo "$person4:: iam learning shell $person3"
