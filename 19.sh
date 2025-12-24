@@ -54,9 +54,9 @@ echo "the sum of 2 numbers is: $total"
 laddu=$(500)
 
 if [ $laddu -lt 500 ]; then
-    echo "it is small laddu"
+    echo "it is $laddu small laddu"
 elif [ $laddu -eq 500 ]; then
-    echo "it is equal laddu"
+    echo "it is $laddu equal laddu"
 else 
-    echo "it is greater laddu"
+    echo "it is $laddu greater laddu"
 fi    
