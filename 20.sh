@@ -11,6 +11,7 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi    
 
+
 VALIDATE(){
     if [ $1 -ne 0 ]; then 
     echo -e "not  installed $2 .... $R FAILURE $N"
@@ -19,12 +20,26 @@ else
     echo -e "already installed $2 .... $G SUCESS $N"    
 fi
 }
+dnf list installed mysql
 
-dnf install mysql -y
-VALIDATE $? MYSQL
+if [ $? -ne 0 ]; then 
+    dnf install mysql -y
+    VALIDATE $? "MYSQL"
+else 
+    echo "already installed.... $Y SKIPPING $N"
+fi 
 
-dnf install nginx -y
-VALIDATE $? nginx
+dnf list installed nginx
+if [ $? -ne 0 ]; then
+    dnf install nginx -y
+    VALIDATE $? "nginx"
+else 
+    echo "already installed.... $Y SKIPPING $N"
+fi 
 
-dnf install python3 -y
-VALIDATE $? python3
+dnf list installed python3 
+if [$? -ne 0 ]; then
+    dnf install python3 -y
+    VALIDATE $? "python3"
+else
+    echo "already iiinstalled.... $Y SKIPPING $N"    
