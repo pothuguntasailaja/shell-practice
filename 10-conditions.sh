@@ -13,4 +13,4 @@ fi
 
 # -gt => greater
 # -eq => equal
-# -ne => negative 
+# -ne => not equal
