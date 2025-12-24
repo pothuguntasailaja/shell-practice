@@ -59,3 +59,4 @@ elif [ $number -eq 500 ]; then
       echo "$number is equal"
 else
     echo "$number is greater"         
+fi     
