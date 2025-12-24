@@ -42,3 +42,11 @@ END_TIME=$(date +%s)
 TOTAL_TIME=$(($END_TIME-$START_TIME))
 
 echo "total time taken is $TOTAL_TIME"
+
+
+number1=100
+number2=300
+
+total=$(($number1+$number2))
+
+echo "the sum of 2 numbers is: $total"
