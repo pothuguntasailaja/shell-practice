@@ -51,7 +51,7 @@ total=$(($number1+$number2))
 
 echo "the sum of 2 numbers is: $total"
 
-laddu=500
+laddu=$(500)
 
 if [ laddu -lt 500 ]; then
     echo "it is small laddu"
