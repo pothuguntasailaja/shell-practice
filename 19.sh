@@ -51,12 +51,11 @@ total=$(($number1+$number2))
 
 echo "the sum of 2 numbers is: $total"
 
-laddu=$5
+number=$3
 
-if [ $laddu -lt 500 ]; then
-    echo "it is $laddu small laddu"
-elif [ $laddu -eq 500 ]; then
-    echo "it is $laddu equal laddu"
-else 
-    echo "it is $laddu greater laddu"
-fi    
+if [ $number -lt 500 ]; then
+   echo "$number is a lesser"
+elif [ $number -eq 500 ]; then
+      echo "$number is equal"
+else
+    echo "$number is greater"         
