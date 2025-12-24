@@ -11,11 +11,20 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi    
 
-dnf install mysql -y
-
-if [ $? -ne 0 ]; then 
-    echo -e "not installed .... $R FAILURE $N"
+VALIDATE(){
+    if [ $1 -ne 0 ]; then 
+    echo -e "not  installed $2 .... $R FAILURE $N"
     exit 1
 else 
-    echo -e "already installed ... $G SUCESS $N"    
+    echo -e "already installed $2 .... $G SUCESS $N"    
 fi
+}
+
+dnf install mysql -y
+VALIDATE $? MYSQL
+
+dnf install nginx -y
+VALIDATE $? nginx
+
+dnf install python3 -y
+VALIDATE $? python3
