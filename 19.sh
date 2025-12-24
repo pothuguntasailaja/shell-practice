@@ -30,3 +30,7 @@ echo "$person4:: iam learning shell $person3"
 echo "please enter ur pin number"
 read -s PIN_NUMBER
 echo "entered pin number is $PIN_NUMBER"
+
+
+
+echo "Course name is : $COURSE"
