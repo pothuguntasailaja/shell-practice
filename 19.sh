@@ -59,3 +59,4 @@ elif [ laddu -eq 500 ]; then
     echo "it is equal laddu"
 else 
     echo "it is greater laddu"
+fi    
