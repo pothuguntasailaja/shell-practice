@@ -28,5 +28,5 @@ echo "$person3:: which course u are learning $person4"
 echo "$person4:: iam learning shell $person3"
 
 echo "please enter ur pin number"
-read PIN_NUMBER
+read -s PIN_NUMBER
 echo "entered pin number is $PIN_NUMBER"
