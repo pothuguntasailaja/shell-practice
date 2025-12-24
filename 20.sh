@@ -14,8 +14,8 @@ fi
 dnf install mysql -y
 
 if [ $? -ne 0 ]; then 
-    echo "not installed .... $R FAILURE $N"
+    echo -e "not installed .... $R FAILURE $N"
     exit 1
 else 
-    echo "already installed ... $G SUCESS $N"    
+    echo -e "already installed ... $G SUCESS $N"    
 fi
