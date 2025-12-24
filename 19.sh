@@ -51,7 +51,7 @@ total=$(($number1+$number2))
 
 echo "the sum of 2 numbers is: $total"
 
-number=$3
+number=700
 
 if [ $number -lt 500 ]; then
    echo "$number is a lesser"
