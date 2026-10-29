@@ -12,8 +12,8 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 
 mkdir -p $LOGS_FOLDER
-echo "Logs will be stored in $LOG_FILE"
-echo "Script started execution at $(date)"
+echo "Logs will be stored in $LOG_FILE" | tee -a $LOG_FILE
+echo "Script started execution at $(date)" | tee -a $LOG_FILE
 
 if [ $USER_ID -ne 0 ]; then 
     echo "please run this script as root privilege"
