@@ -30,7 +30,7 @@ VALIDATE(){
     fi
 }
 
-dnf list installed mysql &>>$LOG_FILE
+dnf list installed mysql &>>$LOG_FILE # so it is used to check wheather already installed or not in the system
 if [ $? -ne 0 ]; then
    dnf install mysql -y &>>$LOG_FILE
    VALIDATE $? "MYSQL"
