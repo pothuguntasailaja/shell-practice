@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIR=$!
+SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} # IF NOT PROVIDED CONSIDERED AS 14 DAYS
 
@@ -39,6 +39,14 @@ fi
 
 if [ ! -d $SOURCE_DIR ]; then
     echo -e "$R source $SOURCE_DIR does not exist $N"
+    exit 1
+fi
+
+### check DEST_DIR exist #####
+
+if [ ! -d $SOURCE_DIR ]; then
+    echo -e "$R Destination  $DEST_DIR does not exist $N"
+    exit 1
 fi
 
 #### FIND THE FILES ####
