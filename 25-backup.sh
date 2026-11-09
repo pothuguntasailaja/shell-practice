@@ -59,3 +59,24 @@ if [ ! -z "${FILES}" ]; then
    echo "Zip file name: $ZIP_FILE_NAME"
    find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
   ## find $SOURCE_DIR -name "*.log" -type f  | zip -@ -j "$ZIP_FILE_NAME"
+
+      ### check Archieval success or not ###
+    if [ -f $ZIP_FILE_NAME ]
+    then
+        echo -e "Archeival .... $G SUCCESS $N"
+
+        ####  Delete if Success ####
+        while IFS= read -r filepath
+        do
+          echo "Deleting the file: $filepath"
+          rm -rf $filepath
+          echo "Deleted the file: $filepath"
+        done <<< $FILES
+    else
+        echo "Archieval ..... $R FAILURE $N"
+        exit 1
+    fi    
+
+else
+    echo -e "No files to archieve .... $Y SKIPPING $N"
+fi    
