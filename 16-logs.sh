@@ -11,7 +11,11 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 
-mkdir -p $LOGS_FOLDER
+# Directory = Place where we store files.
+# Log file = File where we store execution information.
+
+
+mkdir -p $LOGS_FOLDER # -p ante already create ayithe malli create avvadhu
 echo "Logs will be stored in $LOG_FILE" | tee -a $LOG_FILE
 echo "Script started execution at $(date)" | tee -a $LOG_FILE
 
