@@ -24,11 +24,14 @@ if [ ! -d $SOURCE_DIR ]; then  # edhi directory lekapothe error vasthadi vunte e
     exit 1
 fi
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +14)
+# FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +14)
 
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f)
 
 while IFS= read -r filepath
 do
     echo "Deleting the file: $filepath"
+    rm -rf $filepath
+    echo "deleted the file: $filepath"
 
 done <<< $FILES_TO_DELETE # edhi input 
