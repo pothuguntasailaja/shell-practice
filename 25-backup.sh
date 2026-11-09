@@ -44,3 +44,12 @@ fi
 #### FIND THE FILES ####
 # FILES=$(find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS)
 FILES=$(find $SOURCE_DIR -name "*.log" -type f )
+
+if [ ! -z "${FILES}" ]; then
+#####   START ARCHEIVING #####
+   echo "Files found: $FILES"
+   TIMESTAMP=$(date +%F-%H-%M)
+   ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+   echo "Zip file name: $ZIP_FILE_NAME"
+   find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+  ## find $SOURCE_DIR -name "*.log" -type f  | zip -@ -j "$ZIP_FILE_NAME"
