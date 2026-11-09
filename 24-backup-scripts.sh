@@ -25,7 +25,8 @@ if [ $USER_ID -ne 0 ]; then
 fi
 
 USAGE(){
-    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> <DAYS>[optional, default 14 days] $N"
+###    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> <DAYS>[optional, default 14 days] $N"
+    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> $N"
     exit 1
 }
 
