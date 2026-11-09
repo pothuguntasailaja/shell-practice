@@ -25,8 +25,8 @@ if [ $USER_ID -ne 0 ]; then
 fi
 
 USAGE(){
-###    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> <DAYS>[optional, default 14 days] $N"
-    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> $N"
+    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> <DAYS>[optional, default 14 days] $N"
+###    echo -e "$R  USAGE:: sudo sh 24-backup-script.sh <SOURCE_DIR> <DEST_DIR> $N"
     exit 1
 }
 
@@ -52,8 +52,8 @@ if [ ! -z "${FILES}" ]; then
    TIMESTAMP=$(date +%F-%H-%M)
    ZIP_FILE_NAME="$DEST_DIR/app-logs-$TIMESTAMP.zip"
    echo "Zip file name: $ZIP_FILE_NAME"
-  # find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
-   find $SOURCE_DIR -name "*.log" -type f  | zip -@ -j "$ZIP_FILE_NAME"
+   find $SOURCE_DIR -name "*.log" -type f -mtime +$DAYS | zip -@ -j "$ZIP_FILE_NAME"
+  ## find $SOURCE_DIR -name "*.log" -type f  | zip -@ -j "$ZIP_FILE_NAME"
 
 
     ### check Archieval success or not ###
