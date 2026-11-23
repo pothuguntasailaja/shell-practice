@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIR=$!
+SOURCE_DIR=$1
 DEST_DIR=$2
  ##DAYS=${3:-14} # IF NOT PROVIDED CONSIDERED AS 14 DAYS
 

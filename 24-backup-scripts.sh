@@ -37,7 +37,7 @@ fi
 
 ### check SOURCE_DIR exist #####
 
-if [ ! -d $SOURCE_DIR ]; then
+if [ ! -d $SOURCE_DIR ]; then # edhi directory kosam
     echo -e "$R source $SOURCE_DIR does not exist $N"
     exit 1
 fi
@@ -54,7 +54,7 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -type f )
 
 
-if [ ! -z "${FILES}" ]; then
+if [ ! -z "${FILES}" ]; then # edhi variables kosam
 #####   START ARCHEIVING #####
    echo "Files found: $FILES"
    TIMESTAMP=$(date +%F-%H-%M)
@@ -65,7 +65,7 @@ if [ ! -z "${FILES}" ]; then
 
 
     ### check Archieval success or not ###
-    if [ -f $ZIP_FILE_NAME ]
+    if [ -f $ZIP_FILE_NAME ] # edhi files kosam
     then
         echo -e "Archeival .... $G SUCCESS $N"
 

@@ -8,6 +8,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+
+# The /var/log directory is a system directory, and a normal user usually does not have permission to create files there.
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
@@ -26,7 +28,7 @@ fi
 
 # FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f -mtime +14)
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f)
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -type f )
 
 while IFS= read -r filepath
 do
